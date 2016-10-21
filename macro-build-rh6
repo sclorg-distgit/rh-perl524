@@ -1,0 +1,18 @@
+%__perl LD_LIBRARY_PATH="@LIBDIR@${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}" %_scl_root/usr/bin/perl
+%__perl_provides /usr/lib/rpm/perl.prov.@SCL@
+%__perl_requires /usr/lib/rpm/perl.req.@SCL@
+
+# Perl bootstrap for rebuild of Perl and all related packages
+%perl_bootstrap 1
+
+# Enable SCL restrictions
+%perl_small 1
+
+# Use for updating macro name, %%scl contains dash which is not allowed in
+# macro name
+%scl_macro_prefix @MACRO@
+
+# 
+# Could not use scl_package_override, because it does not work properly 
+# on RHEL 6
+%perl_default_filter %{?@MACRO@perl_default_filter}
