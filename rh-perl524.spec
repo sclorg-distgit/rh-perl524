@@ -22,7 +22,7 @@
 Summary: Package that installs %scl
 Name:    %scl_name
 Version: 2.3
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPLv2+
 %if ( 0%{?rhel} && 0%{?rhel} < 7 )
 Source0: macro-build-rh6
@@ -135,6 +135,9 @@ install -m 644 %{scl_name}.7 %{buildroot}%{_mandir}/man7/%{scl_name}.7
 %{_root_sysconfdir}/rpm/macros.%{scl_name_base}-scldevel
 
 %changelog
+* Sun Jul 24 2016 Petr Pisar <ppisar@redhat.com> - 2.3-2
+- Disable perl_bootstrap macro
+
 * Tue Jul 12 2016 Jitka Plesnikova <jplesnik@redhat.com>, Petr Pisar <ppisar@redhat.com> - 2.3-1
 - Initial version for SCL 2.3
 - Escape apostrophs in rh-perl-520(7) manual page

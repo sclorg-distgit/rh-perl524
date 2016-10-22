@@ -3,7 +3,7 @@
 %__perl_requires /usr/lib/rpm/perl.req.@SCL@
 
 # Perl bootstrap for rebuild of Perl and all related packages
-%perl_bootstrap 1
+#%%perl_bootstrap 0
 
 # Enable SCL restrictions
 %perl_small 1
